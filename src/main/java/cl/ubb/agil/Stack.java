@@ -21,8 +21,13 @@ public class Stack {
 	public int getTamanio(){
 		return tamanio;
 	}
-	public int pop(){
-		tamanio--;
-		return numeros[tamanio];
+	public int pop()throws ExcepcionPilaVacia{
+		if(tamanio>0){
+			tamanio--;
+			return numeros[tamanio];
+		}else{
+			throw new ExcepcionPilaVacia();
+		}
+		
 	}
 }

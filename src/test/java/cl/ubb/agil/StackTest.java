@@ -45,7 +45,7 @@ public class StackTest {
 		
 	}
 	@Test
-	public void agregarNumeroUnoYHacerPopStackDevuelveUno(){
+	public void agregarNumeroUnoYHacerPopStackDevuelveUno()throws ExcepcionPilaVacia{
 		Stack stack=new Stack();
 		
 		stack.push(1);
@@ -54,7 +54,7 @@ public class StackTest {
 		assertThat(dato,is(1));
 	}
 	@Test
-	public void agregarNumeroUnoYDosYHacerPopStackDevuelveDos(){
+	public void agregarNumeroUnoYDosYHacerPopStackDevuelveDos()throws ExcepcionPilaVacia{
 		Stack stack=new Stack();
 		
 		stack.push(1);
@@ -64,7 +64,7 @@ public class StackTest {
 		assertThat(dato, is(2));
 	}
 	@Test
-	public void agregarNumeroTresYCuatroYHacerDosPopRetornaCuatroYLuegoTres(){
+	public void agregarNumeroTresYCuatroYHacerDosPopRetornaCuatroYLuegoTres()throws ExcepcionPilaVacia{
 		Stack stack=new Stack();
 		
 		stack.push(3);
@@ -74,5 +74,12 @@ public class StackTest {
 		
 		assertThat(dato1, is(4));
 		assertThat(dato2, is(3));
+	}
+	@Test (expected=ExcepcionPilaVacia.class)
+	public void hacerPopStackVacioDaError()throws ExcepcionPilaVacia{
+		Stack stack=new Stack();
+		
+		stack.pop();
+		
 	}
 }
