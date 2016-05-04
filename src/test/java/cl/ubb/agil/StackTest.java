@@ -2,6 +2,8 @@ package cl.ubb.agil;
 
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class StackTest {
 	@Test
@@ -30,5 +32,16 @@ public class StackTest {
 		boolean b=stack.isEmpty();
 		
 		assertTrue(!b);
+	}
+	@Test
+	public void agregarNumeroUnoYDosYtamanioEsDos(){
+		Stack stack=new Stack();
+		
+		stack.push(1);
+		stack.push(2);
+		int tamanio=stack.getTamanio();
+		
+		assertThat(tamanio, is(2));
+		
 	}
 }

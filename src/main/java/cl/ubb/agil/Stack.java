@@ -18,4 +18,7 @@ public class Stack {
 		dato=numero;
 		tamanio++;
 	}
+	public int getTamanio(){
+		return tamanio;
+	}
 }
