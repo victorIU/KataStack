@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThat;
 public class StackTest {
 	@Test
 	public void StackParteVacia(){
-		Stack stack=new Stack();
+		Stack stack=new Stack(2);
 		
 		boolean b=stack.isEmpty();
 		
@@ -16,7 +16,7 @@ public class StackTest {
 	}
 	@Test
 	public void agregarNumeroUnoYStackNoVacio(){
-		Stack stack=new Stack();
+		Stack stack=new Stack(2);
 		
 		stack.push(1);
 		boolean b=stack.isEmpty();
@@ -25,7 +25,7 @@ public class StackTest {
 	}
 	@Test
 	public void agregarNumeroUnoYDosYStackNoVacio(){
-		Stack stack=new Stack();
+		Stack stack=new Stack(2);
 		
 		stack.push(1);
 		stack.push(2);
@@ -35,7 +35,7 @@ public class StackTest {
 	}
 	@Test
 	public void agregarNumeroUnoYDosYtamanioEsDos(){
-		Stack stack=new Stack();
+		Stack stack=new Stack(2);
 		
 		stack.push(1);
 		stack.push(2);
@@ -46,7 +46,7 @@ public class StackTest {
 	}
 	@Test
 	public void agregarNumeroUnoYHacerPopStackDevuelveUno()throws ExcepcionPilaVacia{
-		Stack stack=new Stack();
+		Stack stack=new Stack(2);
 		
 		stack.push(1);
 		int dato=stack.pop();
@@ -55,7 +55,7 @@ public class StackTest {
 	}
 	@Test
 	public void agregarNumeroUnoYDosYHacerPopStackDevuelveDos()throws ExcepcionPilaVacia{
-		Stack stack=new Stack();
+		Stack stack=new Stack(2);
 		
 		stack.push(1);
 		stack.push(2);
@@ -65,7 +65,7 @@ public class StackTest {
 	}
 	@Test
 	public void agregarNumeroTresYCuatroYHacerDosPopRetornaCuatroYLuegoTres()throws ExcepcionPilaVacia{
-		Stack stack=new Stack();
+		Stack stack=new Stack(2);
 		
 		stack.push(3);
 		stack.push(4);
@@ -77,9 +77,18 @@ public class StackTest {
 	}
 	@Test (expected=ExcepcionPilaVacia.class)
 	public void hacerPopStackVacioDaError()throws ExcepcionPilaVacia{
-		Stack stack=new Stack();
+		Stack stack=new Stack(2);
 		
 		stack.pop();
 		
 	}
+	/*@Test (expected = ExcepcionStackLleno.class)
+	public void agregarAStackLlenoRetornaError(){
+		Stack stack=new Stack(2);
+		
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		
+	}*/
 }

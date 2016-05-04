@@ -3,8 +3,10 @@ package cl.ubb.agil;
 public class Stack {
 	private int numeros[];
 	private int tamanio=0;
-	public Stack(){
-		numeros=new int[2];
+	private int maximo;
+	public Stack(int maximo){
+		numeros=new int[maximo];
+		this.maximo=maximo;
 	}
 	public boolean isEmpty(){
 		if(tamanio==0){
@@ -14,9 +16,14 @@ public class Stack {
 			return false;
 		}
 	}
-	public void push(int numero){
-		numeros[tamanio]=numero;
-		tamanio++;
+	public void push(int numero)/*throws ExcepcionStackLleno*/{
+		//if(tamanio==maximo){
+			//throw new ExcepcionStackLleno();
+		//}else{
+			numeros[tamanio]=numero;
+			tamanio++;
+		//}
+		
 	}
 	public int getTamanio(){
 		return tamanio;
