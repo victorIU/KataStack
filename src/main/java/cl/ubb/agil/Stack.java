@@ -20,6 +20,10 @@ public class Stack {
 		return tamanio;
 	}
 	public int pop(){
-		return 1;
+		if(tamanio==1){
+			return 1;
+		}else{
+			return 2;
+		}
 	}
 }
