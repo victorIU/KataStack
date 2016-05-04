@@ -55,12 +55,24 @@ public class StackTest {
 	}
 	@Test
 	public void agregarNumeroUnoYDosYHacerPopStackDevuelveDos(){
-Stack stack=new Stack();
+		Stack stack=new Stack();
 		
 		stack.push(1);
 		stack.push(2);
 		int dato=stack.pop();
 		
 		assertThat(dato, is(2));
+	}
+	@Test
+	public void agregarNumeroTresYCuatroYHacerDosPopRetornaCuatroYLuegoTres(){
+		Stack stack=new Stack();
+		
+		stack.push(3);
+		stack.push(4);
+		int dato1=stack.pop();
+		int dato2=stack.pop();
+		
+		assertThat(dato1, is(4));
+		assertThat(dato2, is(3));
 	}
 }
