@@ -44,4 +44,13 @@ public class StackTest {
 		assertThat(tamanio, is(2));
 		
 	}
+	@Test
+	public void agregarNumeroUnoYHacerPopStackDevuelveUno(){
+		Stack stack=new Stack();
+		
+		stack.push(1);
+		int dato=stack.pop();
+		
+		assertThat(dato,is(1));
+	}
 }

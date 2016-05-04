@@ -1,7 +1,6 @@
 package cl.ubb.agil;
 
 public class Stack {
-	private int dato;
 	private int tamanio;
 	public Stack(){
 		
@@ -15,10 +14,12 @@ public class Stack {
 		}
 	}
 	public void push(int numero){
-		dato=numero;
 		tamanio++;
 	}
 	public int getTamanio(){
 		return tamanio;
+	}
+	public int pop(){
+		return 1;
 	}
 }
