@@ -7,6 +7,15 @@ public class Stack {
 		
 	}
 	public boolean isEmpty(){
-		return true;
+		if(tamanio==0){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public void push(int numero){
+		dato=numero;
+		tamanio++;
 	}
 }
